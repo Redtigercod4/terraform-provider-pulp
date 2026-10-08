@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  pulp-api:
+    image: "pulp/pulp:3.105.21"
+    ports:
+      - 8080:8080
