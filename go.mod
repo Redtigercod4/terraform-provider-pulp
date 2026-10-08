@@ -7,8 +7,13 @@ require (
 	github.com/hashicorp/terraform-plugin-go v0.31.0
 	github.com/hashicorp/terraform-plugin-log v0.11.0
 	github.com/hashicorp/terraform-plugin-testing v1.16.0
-	github.com/hashicorp/terraform-provider-scaffolding-framework v0.0.0-20261006074615-536f55d5d1ed
+	github.com/redtigercod4/terraform-provider-pulp v0.0.0-00010101000000-000000000000
+	github.com/redtigercod4/terraform-provider-pulp/openapi v0.0.0-00010101000000-000000000000
 )
+
+replace github.com/redtigercod4/terraform-provider-pulp/openapi => ./openapi
+
+replace github.com/redtigercod4/terraform-provider-pulp => ./
 
 require (
 	github.com/ProtonMail/go-crypto v1.4.1 // indirect

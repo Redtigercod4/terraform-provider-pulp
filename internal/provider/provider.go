@@ -4,10 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/hashicorp/terraform-plugin-framework/action"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
-	"github.com/hashicorp/terraform-plugin-framework/ephemeral"
-	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -15,9 +12,6 @@ import (
 )
 
 var _ provider.Provider = &PulpProvider{}
-var _ provider.ProviderWithFunctions = &PulpProvider{}
-var _ provider.ProviderWithEphemeralResources = &PulpProvider{}
-var _ provider.ProviderWithActions = &PulpProvider{}
 
 type PulpProvider struct {
 	version string
@@ -65,7 +59,7 @@ func (p *PulpProvider) Resources(ctx context.Context) []func() resource.Resource
 
 func (p *PulpProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
-		NewExampleDataSource,
+		NewStatusDataSource,
 	}
 }
 
